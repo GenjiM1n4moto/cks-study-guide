@@ -4,3 +4,6 @@ kubeadm-init.out
 admin.conf
 *-console.log
 out
+*.csr
+*.crt
+*.key

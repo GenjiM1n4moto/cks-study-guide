@@ -1,0 +1,4 @@
+> curl -L0 https://dl.k8s.io/v1.26.1/bin/linux/amd64/kube-apiserver.sha256
+
+> curl -L0 https://dl.k8s.io/v1.26.1/bin/linux/amd64/kube-apiserver --output kubeapi
+> shasum -a 256 kubeapi

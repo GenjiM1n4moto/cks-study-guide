@@ -16,9 +16,10 @@ spec:
   containers:
   - image: bmuschko/nodejs-hello-world:1.0.0
     name: hello
+    imagePullPolicy: Always
     ports:
     - containerPort: 3000
-  restartPolicy: Never
+  # restartPolicy: Never
 ---
 apiVersion: v1
 kind: Pod
