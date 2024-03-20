@@ -16,6 +16,7 @@ fi
 
 echo "Generate key or csr successfully!"
 
+# This is for minikube based installation
 now_context=$(kubectl config current-context | tr -d '\n')
 echo "Current context is $now_context"
 if [[ "$now_context" != "minikube" ]]; then
@@ -83,7 +84,7 @@ if [[ $? -ne 0 ]]; then
     exit 1
 fi
 
-kubectl config set-context --user=$username --cluster=minikube $username
+kubectl config set-context --user=$username --cluster=$(kubectl config view -o jsonpath='{.clusters[0].name}') $username
 
 if [[ $? -ne 0 ]]; then
     echo "Set-context wrong!"
