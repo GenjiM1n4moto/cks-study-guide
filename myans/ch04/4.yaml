@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sysctl-example
+spec:
+  securityContext:
+    sysctls:
+    - name: debug.iotrace
+      value: "1"
+    - name: net.core.somaxconn
+      value: "1024"
+  containers:
+  - image: nginx:1.23.1
+    name: sysctl-example
